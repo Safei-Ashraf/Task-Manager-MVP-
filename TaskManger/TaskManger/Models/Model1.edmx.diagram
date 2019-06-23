@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5079810f37845c09b8d392e1bc11b45" Name="Diagram1">
+        <EntityTypeShape EntityType="finalprojectModel.Approve" Width="1.5" PointX="28.5" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Branch" Width="1.5" PointX="3" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.BranchDepartment" Width="1.5" PointX="10.5" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Client" Width="1.5" PointX="13.5" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Country" Width="1.5" PointX="0.75" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Department" Width="1.5" PointX="5.25" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Group" Width="1.5" PointX="10.5" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.GroupRole" Width="1.5" PointX="15.75" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.GroupUser" Width="1.5" PointX="12.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.ImpDate" Width="1.5" PointX="18" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.JobTitle" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Priority" Width="1.5" PointX="7.5" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Project" Width="1.5" PointX="15.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.ProjectAttachment" Width="1.5" PointX="21" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.ProjectPermission" Width="1.5" PointX="21" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.ProjectWorkflow" Width="1.5" PointX="7.5" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Role" Width="1.5" PointX="13.5" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Sprint" Width="1.5" PointX="21" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.Task" Width="1.5" PointX="23.25" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.TaskAttachement" Width="1.5" PointX="25.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.TaskCategory" Width="1.5" PointX="7.5" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.TaskComment" Width="1.5" PointX="27.75" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.TaskHistory" Width="1.5" PointX="30.75" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.TaskPermission" Width="1.5" PointX="25.5" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.TaskPrimarySubCategory" Width="1.5" PointX="12.75" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.TaskSecondarySubCategory" Width="1.5" PointX="18" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.User" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.UserRole" Width="1.5" PointX="10.5" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="finalprojectModel.TaskCommentAttachment" Width="1.5" PointX="33" PointY="31.25" IsExpanded="true" />
+        <AssociationConnector Association="finalprojectModel.FK_Approve_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Approve_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Approve_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskHistory_Approve" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Branch_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Branch_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Branch_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Branch_User2" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Branch_User3" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_BranchDepartment_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Department_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_User_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_BranchDepartment_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_BranchDepartment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_BranchDepartment_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Project_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Group_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Group_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Group_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_GroupRole_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_UserGroup_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_GroupRole_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_GroupRole_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ProjectPermission_GroupRole" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskPermission_GroupRole" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Group_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_UserGroup_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ImpDate_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ImpDate_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Priority_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Priority_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Project_Priority" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Task_Priority" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Project_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Project_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ProjectAttachment_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Project_Attatchement_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ProjectPermission_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Sprint_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Task_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ProjectAttachment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ProjectAttachment_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ProjectWorkflow_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_ProjectWorkflow_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_UserRole_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Sprint_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Sprint_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Attach_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Reply_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Task_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Task_Subcategoryprimary" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Task_SubcategorySecondary" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Task_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Task_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskAttachement_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskHistory_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskPermission_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskAttachement_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskAttachement_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskComment_TaskAttachement" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Category_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Category_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_Subcategoryprimary_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskCommentAttachment_TaskComment" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskHistory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskHistory_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskPermission_UserRole" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskPrimarySubCategory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskPrimarySubCategory_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskSecondarySubCategory_TaskPrimarySubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskSecondarySubCategory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskSecondarySubCategory_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskCommentAttachment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_TaskCommentAttachment_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_User_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_UserRole_User" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.FK_UserRole_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.GroupDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="finalprojectModel.ProjectGroup" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

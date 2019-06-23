@@ -1,0 +1,142 @@
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\ApplicationInsights.config
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\csc.exe
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\csc.exe.config
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\csc.rsp
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\csi.exe
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\csi.rsp
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\System.AppContext.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\System.Collections.Immutable.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\System.IO.FileSystem.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\vbc.exe
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\vbc.exe.config
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\vbc.rsp
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\VBCSCompiler.exe
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\roslyn\VBCSCompiler.exe.config
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\TaskManger.dll.config
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\TaskManger.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\TaskManger.pdb
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Antlr3.Runtime.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.Web.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.WindowsServer.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.ApplicationInsights.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.Web.Infrastructure.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Newtonsoft.Json.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.Helpers.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.Mvc.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.Optimization.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.Razor.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.WebPages.Deployment.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.WebPages.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.WebPages.Razor.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\WebGrease.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.Helpers.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.Mvc.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.Optimization.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.Razor.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.WebPages.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.WebPages.Deployment.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\System.Web.WebPages.Razor.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Antlr3.Runtime.pdb
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Newtonsoft.Json.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.ApplicationInsights.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.WindowsServer.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\Microsoft.AI.Web.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\obj\Debug\TaskManger.csprojResolveAssemblyReference.cache
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\obj\Debug\TaskManger.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\obj\Debug\TaskManger.pdb
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\EntityFramework.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\EntityFramework.SqlServer.dll
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\EntityFramework.xml
+c:\users\monica1\documents\visual studio 2017\Projects\TaskManger\TaskManger\bin\EntityFramework.SqlServer.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\obj\Debug\TaskManger.csprojResolveAssemblyReference.cache
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\obj\Debug\TaskManger.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\obj\Debug\TaskManger.pdb
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\ApplicationInsights.config
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\csc.exe
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\csc.exe.config
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\csc.rsp
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\csi.exe
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\csi.rsp
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\System.AppContext.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\vbc.exe
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\vbc.exe.config
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\vbc.rsp
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\VBCSCompiler.exe
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\TaskManger.dll.config
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\TaskManger.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\TaskManger.pdb
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Antlr3.Runtime.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\EntityFramework.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\EntityFramework.SqlServer.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.Web.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Newtonsoft.Json.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.Helpers.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.Mvc.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.Optimization.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.Razor.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.WebPages.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.WebPages.Razor.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\WebGrease.dll
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\EntityFramework.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\EntityFramework.SqlServer.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.Helpers.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.Mvc.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.Optimization.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.Razor.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.WebPages.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\System.Web.WebPages.Razor.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Antlr3.Runtime.pdb
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Newtonsoft.Json.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Monica1\Desktop\TaskManger\TaskManger\bin\Microsoft.AI.Web.xml

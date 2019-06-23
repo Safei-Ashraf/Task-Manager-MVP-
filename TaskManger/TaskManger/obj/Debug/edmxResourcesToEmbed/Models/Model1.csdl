@@ -1,0 +1,1861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="finalprojectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Approve">
+    <Key>
+      <PropertyRef Name="TaskId" />
+      <PropertyRef Name="Approveid" />
+    </Key>
+    <Property Name="TaskId" Type="Int64" Nullable="false" />
+    <Property Name="Approveid" Type="Int64" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isapprove" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_Approve_Task" FromRole="Approve" ToRole="Task" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Approve_User" FromRole="Approve" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Approve_User1" FromRole="Approve" ToRole="User" />
+    <NavigationProperty Name="TaskHistories" Relationship="Self.FK_TaskHistory_Approve" FromRole="Approve" ToRole="TaskHistory" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <Property Name="GovernorateID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Branch_Country" FromRole="Branch" ToRole="Country" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Branch_User" FromRole="Branch" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Branch_User1" FromRole="Branch" ToRole="User" />
+    <NavigationProperty Name="User2" Relationship="Self.FK_Branch_User2" FromRole="Branch" ToRole="User" />
+    <NavigationProperty Name="User3" Relationship="Self.FK_Branch_User3" FromRole="Branch" ToRole="User" />
+    <NavigationProperty Name="BranchDepartments" Relationship="Self.FK_BranchDepartment_Branch" FromRole="Branch" ToRole="BranchDepartment" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK_Department_Branch" FromRole="Branch" ToRole="Department" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_Branch" FromRole="Branch" ToRole="User" />
+  </EntityType>
+  <EntityType Name="BranchDepartment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BranchID" Type="Int64" Nullable="false" />
+    <Property Name="DepartmentID" Type="Int64" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_BranchDepartment_Branch" FromRole="BranchDepartment" ToRole="Branch" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_BranchDepartment_Department" FromRole="BranchDepartment" ToRole="Department" />
+    <NavigationProperty Name="User" Relationship="Self.FK_BranchDepartment_User" FromRole="BranchDepartment" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_BranchDepartment_User1" FromRole="BranchDepartment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_Project_Client" FromRole="Client" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_Country" FromRole="Country" ToRole="Branch" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BranchID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_Department_Branch" FromRole="Department" ToRole="Branch" />
+    <NavigationProperty Name="BranchDepartments" Relationship="Self.FK_BranchDepartment_Department" FromRole="Department" ToRole="BranchDepartment" />
+    <NavigationProperty Name="Groups" Relationship="Self.FK_Group_Department" FromRole="Department" ToRole="Group" />
+    <NavigationProperty Name="Groups1" Relationship="Self.GroupDepartment" FromRole="Department" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int64" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Group_Department" FromRole="Group" ToRole="Department" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Group_User" FromRole="Group" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Group_User1" FromRole="Group" ToRole="User" />
+    <NavigationProperty Name="GroupRoles" Relationship="Self.FK_GroupRole_Group" FromRole="Group" ToRole="GroupRole" />
+    <NavigationProperty Name="GroupUsers" Relationship="Self.FK_UserGroup_Group" FromRole="Group" ToRole="GroupUser" />
+    <NavigationProperty Name="Departments" Relationship="Self.GroupDepartment" FromRole="Group" ToRole="Department" />
+    <NavigationProperty Name="Projects" Relationship="Self.ProjectGroup" FromRole="Group" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="GroupRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="Int64" Nullable="false" />
+    <Property Name="GroupID" Type="Int64" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_GroupRole_Group" FromRole="GroupRole" ToRole="Group" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_GroupRole_Role" FromRole="GroupRole" ToRole="Role" />
+    <NavigationProperty Name="User" Relationship="Self.FK_GroupRole_User" FromRole="GroupRole" ToRole="User" />
+    <NavigationProperty Name="ProjectPermissions" Relationship="Self.FK_ProjectPermission_GroupRole" FromRole="GroupRole" ToRole="ProjectPermission" />
+    <NavigationProperty Name="TaskPermissions" Relationship="Self.FK_TaskPermission_GroupRole" FromRole="GroupRole" ToRole="TaskPermission" />
+  </EntityType>
+  <EntityType Name="GroupUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="UserID" Type="Int64" Nullable="false" />
+    <Property Name="GroupID" Type="Int64" Nullable="false" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_UserGroup_Group" FromRole="GroupUser" ToRole="Group" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Group_User_User" FromRole="GroupUser" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_UserGroup_User" FromRole="GroupUser" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ImpDate">
+    <Key>
+      <PropertyRef Name="ImpDateID" />
+    </Key>
+    <Property Name="ImpDateID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImpDate1" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TaskID" Type="Int64" />
+    <Property Name="ProjectID" Type="Int64" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_ImpDate_Project" FromRole="ImpDate" ToRole="Project" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_ImpDate_Task" FromRole="ImpDate" ToRole="Task" />
+  </EntityType>
+  <EntityType Name="JobTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Priority">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="OrderPriority" Type="Int32" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Priority_User" FromRole="Priority" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Priority_User1" FromRole="Priority" ToRole="User" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_Project_Priority" FromRole="Priority" ToRole="Project" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_Priority" FromRole="Priority" ToRole="Task" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Requirment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectBillable" Type="Boolean" Nullable="false" />
+    <Property Name="ProjectTimeTracking" Type="Boolean" Nullable="false" />
+    <Property Name="ClientId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="Revision" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriorityID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReminderDate" Type="DateTime" Precision="3" />
+    <Property Name="Completed" Type="Boolean" />
+    <Property Name="ClosureDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Project_Client" FromRole="Project" ToRole="Client" />
+    <NavigationProperty Name="ImpDates" Relationship="Self.FK_ImpDate_Project" FromRole="Project" ToRole="ImpDate" />
+    <NavigationProperty Name="Priority" Relationship="Self.FK_Project_Priority" FromRole="Project" ToRole="Priority" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Project_User" FromRole="Project" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Project_User1" FromRole="Project" ToRole="User" />
+    <NavigationProperty Name="ProjectAttachments" Relationship="Self.FK_ProjectAttachment_Project" FromRole="Project" ToRole="ProjectAttachment" />
+    <NavigationProperty Name="ProjectAttachments1" Relationship="Self.FK_Project_Attatchement_Project" FromRole="Project" ToRole="ProjectAttachment" />
+    <NavigationProperty Name="ProjectPermissions" Relationship="Self.FK_ProjectPermission_Project" FromRole="Project" ToRole="ProjectPermission" />
+    <NavigationProperty Name="Sprints" Relationship="Self.FK_Sprint_Project" FromRole="Project" ToRole="Sprint" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_Project" FromRole="Project" ToRole="Task" />
+    <NavigationProperty Name="Groups" Relationship="Self.ProjectGroup" FromRole="Project" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="ProjectAttachment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int64" Nullable="false" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttachmentPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileExtenssion" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_ProjectAttachment_Project" FromRole="ProjectAttachment" ToRole="Project" />
+    <NavigationProperty Name="Project1" Relationship="Self.FK_Project_Attatchement_Project" FromRole="ProjectAttachment" ToRole="Project" />
+    <NavigationProperty Name="User" Relationship="Self.FK_ProjectAttachment_User" FromRole="ProjectAttachment" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_ProjectAttachment_User1" FromRole="ProjectAttachment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ProjectPermission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupRoleID" Type="Int64" />
+    <Property Name="Permission" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="GroupRole" Relationship="Self.FK_ProjectPermission_GroupRole" FromRole="ProjectPermission" ToRole="GroupRole" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_ProjectPermission_Project" FromRole="ProjectPermission" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="ProjectWorkflow">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="Self.FK_ProjectWorkflow_User" FromRole="ProjectWorkflow" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_ProjectWorkflow_User1" FromRole="ProjectWorkflow" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Int64" />
+    <NavigationProperty Name="GroupRoles" Relationship="Self.FK_GroupRole_Role" FromRole="Role" ToRole="GroupRole" />
+    <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_Role" FromRole="Role" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="Sprint">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_Sprint_Project" FromRole="Sprint" ToRole="Project" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Sprint_User" FromRole="Sprint" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Sprint_User1" FromRole="Sprint" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Requirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PriorityID" Type="Int32" Nullable="false" />
+    <Property Name="Billable" Type="Boolean" Nullable="false" />
+    <Property Name="TimeTracking" Type="Boolean" Nullable="false" />
+    <Property Name="EApprove" Type="Boolean" Nullable="false" />
+    <Property Name="Quality" Type="Double" />
+    <Property Name="Time" Type="Double" />
+    <Property Name="Performance" Type="Double" />
+    <Property Name="CategoryID" Type="Int64" />
+    <Property Name="ProjectID" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="SubCategoryprimaryID" Type="Int64" />
+    <Property Name="SubCategorySecondID" Type="Int64" />
+    <Property Name="IsProject" Type="Boolean" Nullable="false" />
+    <Property Name="WorkflowID" Type="Int64" />
+    <Property Name="Revision" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="ReminderDate" Type="DateTime" Precision="3" />
+    <Property Name="Completed" Type="Boolean" />
+    <Property Name="ClosureDate" Type="DateTime" Precision="3" />
+    <Property Name="EstimatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Approves" Relationship="Self.FK_Approve_Task" FromRole="Task" ToRole="Approve" />
+    <NavigationProperty Name="ImpDates" Relationship="Self.FK_ImpDate_Task" FromRole="Task" ToRole="ImpDate" />
+    <NavigationProperty Name="Priority" Relationship="Self.FK_Task_Priority" FromRole="Task" ToRole="Priority" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_Task_Project" FromRole="Task" ToRole="Project" />
+    <NavigationProperty Name="TaskAttachements" Relationship="Self.FK_Attach_Task" FromRole="Task" ToRole="TaskAttachement" />
+    <NavigationProperty Name="TaskComments" Relationship="Self.FK_Reply_Task" FromRole="Task" ToRole="TaskComment" />
+    <NavigationProperty Name="TaskCategory" Relationship="Self.FK_Task_Category" FromRole="Task" ToRole="TaskCategory" />
+    <NavigationProperty Name="TaskPrimarySubCategory" Relationship="Self.FK_Task_Subcategoryprimary" FromRole="Task" ToRole="TaskPrimarySubCategory" />
+    <NavigationProperty Name="TaskSecondarySubCategory" Relationship="Self.FK_Task_SubcategorySecondary" FromRole="Task" ToRole="TaskSecondarySubCategory" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Task_User" FromRole="Task" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Task_User1" FromRole="Task" ToRole="User" />
+    <NavigationProperty Name="TaskAttachements1" Relationship="Self.FK_TaskAttachement_Task" FromRole="Task" ToRole="TaskAttachement" />
+    <NavigationProperty Name="TaskHistories" Relationship="Self.FK_TaskHistory_Task" FromRole="Task" ToRole="TaskHistory" />
+    <NavigationProperty Name="TaskPermissions" Relationship="Self.FK_TaskPermission_Task" FromRole="Task" ToRole="TaskPermission" />
+  </EntityType>
+  <EntityType Name="TaskAttachement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="TaskID" Type="Int64" Nullable="false" />
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileExtenssion" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_Attach_Task" FromRole="TaskAttachement" ToRole="Task" />
+    <NavigationProperty Name="Task1" Relationship="Self.FK_TaskAttachement_Task" FromRole="TaskAttachement" ToRole="Task" />
+    <NavigationProperty Name="User" Relationship="Self.FK_TaskAttachement_User" FromRole="TaskAttachement" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_TaskAttachement_User1" FromRole="TaskAttachement" ToRole="User" />
+    <NavigationProperty Name="TaskComments" Relationship="Self.FK_TaskComment_TaskAttachement" FromRole="TaskAttachement" ToRole="TaskComment" />
+  </EntityType>
+  <EntityType Name="TaskCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_Category" FromRole="TaskCategory" ToRole="Task" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Category_User" FromRole="TaskCategory" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Category_User1" FromRole="TaskCategory" ToRole="User" />
+    <NavigationProperty Name="TaskPrimarySubCategories" Relationship="Self.FK_Subcategoryprimary_Category" FromRole="TaskCategory" ToRole="TaskPrimarySubCategory" />
+  </EntityType>
+  <EntityType Name="TaskComment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TaskId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_Reply_Task" FromRole="TaskComment" ToRole="Task" />
+    <NavigationProperty Name="TaskAttachement" Relationship="Self.FK_TaskComment_TaskAttachement" FromRole="TaskComment" ToRole="TaskAttachement" />
+    <NavigationProperty Name="TaskCommentAttachments" Relationship="Self.FK_TaskCommentAttachment_TaskComment" FromRole="TaskComment" ToRole="TaskCommentAttachment" />
+  </EntityType>
+  <EntityType Name="TaskHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="UserID" Type="Int64" />
+    <Property Name="TaskID" Type="Int64" />
+    <Property Name="DelegateTo" Type="Int64" />
+    <Property Name="DelegateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApproveID" Type="Int64" />
+    <NavigationProperty Name="Approve" Relationship="Self.FK_TaskHistory_Approve" FromRole="TaskHistory" ToRole="Approve" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_TaskHistory_Task" FromRole="TaskHistory" ToRole="Task" />
+    <NavigationProperty Name="User" Relationship="Self.FK_TaskHistory_User" FromRole="TaskHistory" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_TaskHistory_User1" FromRole="TaskHistory" ToRole="User" />
+  </EntityType>
+  <EntityType Name="TaskPermission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserRole" Type="Int64" />
+    <Property Name="GroupRole" Type="Int64" />
+    <Property Name="Permission" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TaskID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="GroupRole1" Relationship="Self.FK_TaskPermission_GroupRole" FromRole="TaskPermission" ToRole="GroupRole" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_TaskPermission_Task" FromRole="TaskPermission" ToRole="Task" />
+    <NavigationProperty Name="UserRole1" Relationship="Self.FK_TaskPermission_UserRole" FromRole="TaskPermission" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="TaskPrimarySubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_Subcategoryprimary" FromRole="TaskPrimarySubCategory" ToRole="Task" />
+    <NavigationProperty Name="TaskCategory" Relationship="Self.FK_Subcategoryprimary_Category" FromRole="TaskPrimarySubCategory" ToRole="TaskCategory" />
+    <NavigationProperty Name="User" Relationship="Self.FK_TaskPrimarySubCategory_User" FromRole="TaskPrimarySubCategory" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_TaskPrimarySubCategory_User1" FromRole="TaskPrimarySubCategory" ToRole="User" />
+    <NavigationProperty Name="TaskSecondarySubCategories" Relationship="Self.FK_TaskSecondarySubCategory_TaskPrimarySubCategory" FromRole="TaskPrimarySubCategory" ToRole="TaskSecondarySubCategory" />
+  </EntityType>
+  <EntityType Name="TaskSecondarySubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TaskPrimarySubCategoryID" Type="Int64" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_SubcategorySecondary" FromRole="TaskSecondarySubCategory" ToRole="Task" />
+    <NavigationProperty Name="TaskPrimarySubCategory" Relationship="Self.FK_TaskSecondarySubCategory_TaskPrimarySubCategory" FromRole="TaskSecondarySubCategory" ToRole="TaskPrimarySubCategory" />
+    <NavigationProperty Name="User" Relationship="Self.FK_TaskSecondarySubCategory_User" FromRole="TaskSecondarySubCategory" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_TaskSecondarySubCategory_User1" FromRole="TaskSecondarySubCategory" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int64" />
+    <Property Name="BranchId" Type="Int64" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreationDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitleID" Type="Int32" />
+    <Property Name="OldID" Type="Int32" />
+    <NavigationProperty Name="Approves" Relationship="Self.FK_Approve_User" FromRole="User" ToRole="Approve" />
+    <NavigationProperty Name="Approves1" Relationship="Self.FK_Approve_User1" FromRole="User" ToRole="Approve" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_User" FromRole="User" ToRole="Branch" />
+    <NavigationProperty Name="Branches1" Relationship="Self.FK_Branch_User1" FromRole="User" ToRole="Branch" />
+    <NavigationProperty Name="Branches2" Relationship="Self.FK_Branch_User2" FromRole="User" ToRole="Branch" />
+    <NavigationProperty Name="Branches3" Relationship="Self.FK_Branch_User3" FromRole="User" ToRole="Branch" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_User_Branch" FromRole="User" ToRole="Branch" />
+    <NavigationProperty Name="BranchDepartments" Relationship="Self.FK_BranchDepartment_User" FromRole="User" ToRole="BranchDepartment" />
+    <NavigationProperty Name="BranchDepartments1" Relationship="Self.FK_BranchDepartment_User1" FromRole="User" ToRole="BranchDepartment" />
+    <NavigationProperty Name="Groups" Relationship="Self.FK_Group_User" FromRole="User" ToRole="Group" />
+    <NavigationProperty Name="Groups1" Relationship="Self.FK_Group_User1" FromRole="User" ToRole="Group" />
+    <NavigationProperty Name="GroupRoles" Relationship="Self.FK_GroupRole_User" FromRole="User" ToRole="GroupRole" />
+    <NavigationProperty Name="GroupUsers" Relationship="Self.FK_Group_User_User" FromRole="User" ToRole="GroupUser" />
+    <NavigationProperty Name="GroupUsers1" Relationship="Self.FK_UserGroup_User" FromRole="User" ToRole="GroupUser" />
+    <NavigationProperty Name="Priorities" Relationship="Self.FK_Priority_User" FromRole="User" ToRole="Priority" />
+    <NavigationProperty Name="Priorities1" Relationship="Self.FK_Priority_User1" FromRole="User" ToRole="Priority" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_Project_User" FromRole="User" ToRole="Project" />
+    <NavigationProperty Name="Projects1" Relationship="Self.FK_Project_User1" FromRole="User" ToRole="Project" />
+    <NavigationProperty Name="ProjectAttachments" Relationship="Self.FK_ProjectAttachment_User" FromRole="User" ToRole="ProjectAttachment" />
+    <NavigationProperty Name="ProjectAttachments1" Relationship="Self.FK_ProjectAttachment_User1" FromRole="User" ToRole="ProjectAttachment" />
+    <NavigationProperty Name="ProjectWorkflows" Relationship="Self.FK_ProjectWorkflow_User" FromRole="User" ToRole="ProjectWorkflow" />
+    <NavigationProperty Name="ProjectWorkflows1" Relationship="Self.FK_ProjectWorkflow_User1" FromRole="User" ToRole="ProjectWorkflow" />
+    <NavigationProperty Name="Sprints" Relationship="Self.FK_Sprint_User" FromRole="User" ToRole="Sprint" />
+    <NavigationProperty Name="Sprints1" Relationship="Self.FK_Sprint_User1" FromRole="User" ToRole="Sprint" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_User" FromRole="User" ToRole="Task" />
+    <NavigationProperty Name="Tasks1" Relationship="Self.FK_Task_User1" FromRole="User" ToRole="Task" />
+    <NavigationProperty Name="TaskAttachements" Relationship="Self.FK_TaskAttachement_User" FromRole="User" ToRole="TaskAttachement" />
+    <NavigationProperty Name="TaskAttachements1" Relationship="Self.FK_TaskAttachement_User1" FromRole="User" ToRole="TaskAttachement" />
+    <NavigationProperty Name="TaskCategories" Relationship="Self.FK_Category_User" FromRole="User" ToRole="TaskCategory" />
+    <NavigationProperty Name="TaskCategories1" Relationship="Self.FK_Category_User1" FromRole="User" ToRole="TaskCategory" />
+    <NavigationProperty Name="TaskHistories" Relationship="Self.FK_TaskHistory_User" FromRole="User" ToRole="TaskHistory" />
+    <NavigationProperty Name="TaskHistories1" Relationship="Self.FK_TaskHistory_User1" FromRole="User" ToRole="TaskHistory" />
+    <NavigationProperty Name="TaskPrimarySubCategories" Relationship="Self.FK_TaskPrimarySubCategory_User" FromRole="User" ToRole="TaskPrimarySubCategory" />
+    <NavigationProperty Name="TaskPrimarySubCategories1" Relationship="Self.FK_TaskPrimarySubCategory_User1" FromRole="User" ToRole="TaskPrimarySubCategory" />
+    <NavigationProperty Name="TaskSecondarySubCategories" Relationship="Self.FK_TaskSecondarySubCategory_User" FromRole="User" ToRole="TaskSecondarySubCategory" />
+    <NavigationProperty Name="TaskSecondarySubCategories1" Relationship="Self.FK_TaskSecondarySubCategory_User1" FromRole="User" ToRole="TaskSecondarySubCategory" />
+    <NavigationProperty Name="TaskCommentAttachments" Relationship="Self.FK_TaskCommentAttachment_User" FromRole="User" ToRole="TaskCommentAttachment" />
+    <NavigationProperty Name="TaskCommentAttachments1" Relationship="Self.FK_TaskCommentAttachment_User1" FromRole="User" ToRole="TaskCommentAttachment" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_User_User" FromRole="User" ToRole="User1" />
+    <NavigationProperty Name="User2" Relationship="Self.FK_User_User" FromRole="User1" ToRole="User" />
+    <NavigationProperty Name="User11" Relationship="Self.FK_User_User1" FromRole="User" ToRole="User1" />
+    <NavigationProperty Name="User3" Relationship="Self.FK_User_User1" FromRole="User1" ToRole="User" />
+    <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_User" FromRole="User" ToRole="UserRole" />
+    <NavigationProperty Name="UserRoles1" Relationship="Self.FK_UserRole_User1" FromRole="User" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="RoleID" Type="Int64" Nullable="false" />
+    <Property Name="UserID" Type="Int64" Nullable="false" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="CreatedDate" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_UserRole_Role" FromRole="UserRole" ToRole="Role" />
+    <NavigationProperty Name="TaskPermissions" Relationship="Self.FK_TaskPermission_UserRole" FromRole="UserRole" ToRole="TaskPermission" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserRole_User" FromRole="UserRole" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_UserRole_User1" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <EntityType Name="TaskCommentAttachment">
+    <Key>
+      <PropertyRef Name="TaskCommentID" />
+      <PropertyRef Name="AttachmentPath" />
+      <PropertyRef Name="FileName" />
+      <PropertyRef Name="FileExtenssion" />
+      <PropertyRef Name="Category" />
+      <PropertyRef Name="CreationDate" />
+      <PropertyRef Name="CreatedBy" />
+    </Key>
+    <Property Name="TaskCommentID" Type="Int64" Nullable="false" />
+    <Property Name="AttachmentPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileExtenssion" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <NavigationProperty Name="TaskComment" Relationship="Self.FK_TaskCommentAttachment_TaskComment" FromRole="TaskCommentAttachment" ToRole="TaskComment" />
+    <NavigationProperty Name="User" Relationship="Self.FK_TaskCommentAttachment_User" FromRole="TaskCommentAttachment" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_TaskCommentAttachment_User1" FromRole="TaskCommentAttachment" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Approve_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="Approve" Type="Self.Approve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Approve">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Approve_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Approve" Type="Self.Approve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Approve">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Approve_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Approve" Type="Self.Approve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Approve">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskHistory_Approve">
+    <End Role="Approve" Type="Self.Approve" Multiplicity="0..1" />
+    <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Approve">
+        <PropertyRef Name="TaskId" />
+        <PropertyRef Name="Approveid" />
+      </Principal>
+      <Dependent Role="TaskHistory">
+        <PropertyRef Name="TaskID" />
+        <PropertyRef Name="ApproveID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branch_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branch_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branch_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branch_User2">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branch_User3">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDepartment_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+    <End Role="BranchDepartment" Type="Self.BranchDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BranchDepartment">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDepartment_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="BranchDepartment" Type="Self.BranchDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BranchDepartment">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDepartment_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="BranchDepartment" Type="Self.BranchDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BranchDepartment">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchDepartment_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="BranchDepartment" Type="Self.BranchDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BranchDepartment">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupRole_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="GroupRole" Type="Self.GroupRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupRole">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroup_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupUser">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="GroupRole" Type="Self.GroupRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupRole_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="GroupRole" Type="Self.GroupRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupRole">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectPermission_GroupRole">
+    <End Role="GroupRole" Type="Self.GroupRole" Multiplicity="0..1" />
+    <End Role="ProjectPermission" Type="Self.ProjectPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectPermission">
+        <PropertyRef Name="GroupRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskPermission_GroupRole">
+    <End Role="GroupRole" Type="Self.GroupRole" Multiplicity="0..1" />
+    <End Role="TaskPermission" Type="Self.TaskPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskPermission">
+        <PropertyRef Name="GroupRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_User_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupUser">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserGroup_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImpDate_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="ImpDate" Type="Self.ImpDate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ImpDate">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImpDate_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+    <End Role="ImpDate" Type="Self.ImpDate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ImpDate">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Priority_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Priority" Type="Self.Priority" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Priority">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Priority_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Priority" Type="Self.Priority" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Priority">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Priority">
+    <End Role="Priority" Type="Self.Priority" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Priority">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="PriorityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_Priority">
+    <End Role="Priority" Type="Self.Priority" Multiplicity="1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Priority">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="PriorityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAttachment_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectAttachment" Type="Self.ProjectAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectAttachment">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Attatchement_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectAttachment" Type="Self.ProjectAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectAttachment">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectPermission_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectPermission" Type="Self.ProjectPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectPermission">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sprint_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="Sprint" Type="Self.Sprint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sprint">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAttachment_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="ProjectAttachment" Type="Self.ProjectAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectAttachment">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectAttachment_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ProjectAttachment" Type="Self.ProjectAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectAttachment">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectWorkflow_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ProjectWorkflow" Type="Self.ProjectWorkflow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectWorkflow">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectWorkflow_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ProjectWorkflow" Type="Self.ProjectWorkflow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectWorkflow">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sprint_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Sprint" Type="Self.Sprint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sprint">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sprint_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Sprint" Type="Self.Sprint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sprint">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attach_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="TaskAttachement" Type="Self.TaskAttachement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskAttachement">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reply_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="TaskComment" Type="Self.TaskComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskComment">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_Category">
+    <End Role="TaskCategory" Type="Self.TaskCategory" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_Subcategoryprimary">
+    <End Role="TaskPrimarySubCategory" Type="Self.TaskPrimarySubCategory" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskPrimarySubCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="SubCategoryprimaryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_SubcategorySecondary">
+    <End Role="TaskSecondarySubCategory" Type="Self.TaskSecondarySubCategory" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskSecondarySubCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="SubCategorySecondID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAttachement_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="TaskAttachement" Type="Self.TaskAttachement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskAttachement">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskHistory_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+    <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskHistory">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskPermission_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="TaskPermission" Type="Self.TaskPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskPermission">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAttachement_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="TaskAttachement" Type="Self.TaskAttachement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskAttachement">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAttachement_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="TaskAttachement" Type="Self.TaskAttachement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskAttachement">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskComment_TaskAttachement">
+    <End Role="TaskAttachement" Type="Self.TaskAttachement" Multiplicity="1" />
+    <End Role="TaskComment" Type="Self.TaskComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskAttachement">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskComment">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="TaskCategory" Type="Self.TaskCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskCategory">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="TaskCategory" Type="Self.TaskCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskCategory">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subcategoryprimary_Category">
+    <End Role="TaskCategory" Type="Self.TaskCategory" Multiplicity="1" />
+    <End Role="TaskPrimarySubCategory" Type="Self.TaskPrimarySubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskPrimarySubCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskCommentAttachment_TaskComment">
+    <End Role="TaskComment" Type="Self.TaskComment" Multiplicity="1" />
+    <End Role="TaskCommentAttachment" Type="Self.TaskCommentAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskComment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskCommentAttachment">
+        <PropertyRef Name="TaskCommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskHistory_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskHistory">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskHistory_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskHistory">
+        <PropertyRef Name="DelegateTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskPermission_UserRole">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+    <End Role="TaskPermission" Type="Self.TaskPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskPermission">
+        <PropertyRef Name="UserRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskPrimarySubCategory_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="TaskPrimarySubCategory" Type="Self.TaskPrimarySubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskPrimarySubCategory">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskPrimarySubCategory_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="TaskPrimarySubCategory" Type="Self.TaskPrimarySubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskPrimarySubCategory">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskSecondarySubCategory_TaskPrimarySubCategory">
+    <End Role="TaskPrimarySubCategory" Type="Self.TaskPrimarySubCategory" Multiplicity="1" />
+    <End Role="TaskSecondarySubCategory" Type="Self.TaskSecondarySubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskPrimarySubCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskSecondarySubCategory">
+        <PropertyRef Name="TaskPrimarySubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskSecondarySubCategory_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="TaskSecondarySubCategory" Type="Self.TaskSecondarySubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskSecondarySubCategory">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskSecondarySubCategory_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="TaskSecondarySubCategory" Type="Self.TaskSecondarySubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskSecondarySubCategory">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskCommentAttachment_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="TaskCommentAttachment" Type="Self.TaskCommentAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskCommentAttachment">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskCommentAttachment_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="TaskCommentAttachment" Type="Self.TaskCommentAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskCommentAttachment">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="User1" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="User1" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GroupDepartment">
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+  </Association>
+  <Association Name="ProjectGroup">
+    <End Role="Group" Type="Self.Group" Multiplicity="*" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="finalprojectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Approves" EntityType="Self.Approve" />
+    <EntitySet Name="Branches" EntityType="Self.Branch" />
+    <EntitySet Name="BranchDepartments" EntityType="Self.BranchDepartment" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="GroupRoles" EntityType="Self.GroupRole" />
+    <EntitySet Name="GroupUsers" EntityType="Self.GroupUser" />
+    <EntitySet Name="ImpDates" EntityType="Self.ImpDate" />
+    <EntitySet Name="JobTitles" EntityType="Self.JobTitle" />
+    <EntitySet Name="Priorities" EntityType="Self.Priority" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="ProjectAttachments" EntityType="Self.ProjectAttachment" />
+    <EntitySet Name="ProjectPermissions" EntityType="Self.ProjectPermission" />
+    <EntitySet Name="ProjectWorkflows" EntityType="Self.ProjectWorkflow" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Sprints" EntityType="Self.Sprint" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="TaskAttachements" EntityType="Self.TaskAttachement" />
+    <EntitySet Name="TaskCategories" EntityType="Self.TaskCategory" />
+    <EntitySet Name="TaskComments" EntityType="Self.TaskComment" />
+    <EntitySet Name="TaskHistories" EntityType="Self.TaskHistory" />
+    <EntitySet Name="TaskPermissions" EntityType="Self.TaskPermission" />
+    <EntitySet Name="TaskPrimarySubCategories" EntityType="Self.TaskPrimarySubCategory" />
+    <EntitySet Name="TaskSecondarySubCategories" EntityType="Self.TaskSecondarySubCategory" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="TaskCommentAttachments" EntityType="Self.TaskCommentAttachment" />
+    <AssociationSet Name="FK_Approve_Task" Association="Self.FK_Approve_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="Approve" EntitySet="Approves" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Approve_User" Association="Self.FK_Approve_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Approve" EntitySet="Approves" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Approve_User1" Association="Self.FK_Approve_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Approve" EntitySet="Approves" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskHistory_Approve" Association="Self.FK_TaskHistory_Approve">
+      <End Role="Approve" EntitySet="Approves" />
+      <End Role="TaskHistory" EntitySet="TaskHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branch_Country" Association="Self.FK_Branch_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branch_User" Association="Self.FK_Branch_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branch_User1" Association="Self.FK_Branch_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branch_User2" Association="Self.FK_Branch_User2">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branch_User3" Association="Self.FK_Branch_User3">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDepartment_Branch" Association="Self.FK_BranchDepartment_Branch">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="BranchDepartment" EntitySet="BranchDepartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Branch" Association="Self.FK_Department_Branch">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Department" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Branch" Association="Self.FK_User_Branch">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDepartment_Department" Association="Self.FK_BranchDepartment_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="BranchDepartment" EntitySet="BranchDepartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDepartment_User" Association="Self.FK_BranchDepartment_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="BranchDepartment" EntitySet="BranchDepartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchDepartment_User1" Association="Self.FK_BranchDepartment_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="BranchDepartment" EntitySet="BranchDepartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Client" Association="Self.FK_Project_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Department" Association="Self.FK_Group_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_User" Association="Self.FK_Group_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_User1" Association="Self.FK_Group_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupRole_Group" Association="Self.FK_GroupRole_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="GroupRole" EntitySet="GroupRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroup_Group" Association="Self.FK_UserGroup_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="GroupUser" EntitySet="GroupUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupRole_Role" Association="Self.FK_GroupRole_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="GroupRole" EntitySet="GroupRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupRole_User" Association="Self.FK_GroupRole_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="GroupRole" EntitySet="GroupRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectPermission_GroupRole" Association="Self.FK_ProjectPermission_GroupRole">
+      <End Role="GroupRole" EntitySet="GroupRoles" />
+      <End Role="ProjectPermission" EntitySet="ProjectPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskPermission_GroupRole" Association="Self.FK_TaskPermission_GroupRole">
+      <End Role="GroupRole" EntitySet="GroupRoles" />
+      <End Role="TaskPermission" EntitySet="TaskPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_User_User" Association="Self.FK_Group_User_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="GroupUser" EntitySet="GroupUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserGroup_User" Association="Self.FK_UserGroup_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="GroupUser" EntitySet="GroupUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImpDate_Project" Association="Self.FK_ImpDate_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ImpDate" EntitySet="ImpDates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImpDate_Task" Association="Self.FK_ImpDate_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="ImpDate" EntitySet="ImpDates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Priority_User" Association="Self.FK_Priority_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Priority" EntitySet="Priorities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Priority_User1" Association="Self.FK_Priority_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Priority" EntitySet="Priorities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Priority" Association="Self.FK_Project_Priority">
+      <End Role="Priority" EntitySet="Priorities" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_Priority" Association="Self.FK_Task_Priority">
+      <End Role="Priority" EntitySet="Priorities" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_User" Association="Self.FK_Project_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_User1" Association="Self.FK_Project_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAttachment_Project" Association="Self.FK_ProjectAttachment_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ProjectAttachment" EntitySet="ProjectAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Attatchement_Project" Association="Self.FK_Project_Attatchement_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ProjectAttachment" EntitySet="ProjectAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectPermission_Project" Association="Self.FK_ProjectPermission_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ProjectPermission" EntitySet="ProjectPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sprint_Project" Association="Self.FK_Sprint_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Sprint" EntitySet="Sprints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_Project" Association="Self.FK_Task_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAttachment_User" Association="Self.FK_ProjectAttachment_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProjectAttachment" EntitySet="ProjectAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectAttachment_User1" Association="Self.FK_ProjectAttachment_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProjectAttachment" EntitySet="ProjectAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectWorkflow_User" Association="Self.FK_ProjectWorkflow_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProjectWorkflow" EntitySet="ProjectWorkflows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectWorkflow_User1" Association="Self.FK_ProjectWorkflow_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProjectWorkflow" EntitySet="ProjectWorkflows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sprint_User" Association="Self.FK_Sprint_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Sprint" EntitySet="Sprints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sprint_User1" Association="Self.FK_Sprint_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Sprint" EntitySet="Sprints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attach_Task" Association="Self.FK_Attach_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="TaskAttachement" EntitySet="TaskAttachements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reply_Task" Association="Self.FK_Reply_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="TaskComment" EntitySet="TaskComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_Category" Association="Self.FK_Task_Category">
+      <End Role="TaskCategory" EntitySet="TaskCategories" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_Subcategoryprimary" Association="Self.FK_Task_Subcategoryprimary">
+      <End Role="TaskPrimarySubCategory" EntitySet="TaskPrimarySubCategories" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_SubcategorySecondary" Association="Self.FK_Task_SubcategorySecondary">
+      <End Role="TaskSecondarySubCategory" EntitySet="TaskSecondarySubCategories" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_User" Association="Self.FK_Task_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_User1" Association="Self.FK_Task_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAttachement_Task" Association="Self.FK_TaskAttachement_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="TaskAttachement" EntitySet="TaskAttachements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskHistory_Task" Association="Self.FK_TaskHistory_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="TaskHistory" EntitySet="TaskHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskPermission_Task" Association="Self.FK_TaskPermission_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="TaskPermission" EntitySet="TaskPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAttachement_User" Association="Self.FK_TaskAttachement_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskAttachement" EntitySet="TaskAttachements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAttachement_User1" Association="Self.FK_TaskAttachement_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskAttachement" EntitySet="TaskAttachements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskComment_TaskAttachement" Association="Self.FK_TaskComment_TaskAttachement">
+      <End Role="TaskAttachement" EntitySet="TaskAttachements" />
+      <End Role="TaskComment" EntitySet="TaskComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_User" Association="Self.FK_Category_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskCategory" EntitySet="TaskCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_User1" Association="Self.FK_Category_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskCategory" EntitySet="TaskCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subcategoryprimary_Category" Association="Self.FK_Subcategoryprimary_Category">
+      <End Role="TaskCategory" EntitySet="TaskCategories" />
+      <End Role="TaskPrimarySubCategory" EntitySet="TaskPrimarySubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskCommentAttachment_TaskComment" Association="Self.FK_TaskCommentAttachment_TaskComment">
+      <End Role="TaskComment" EntitySet="TaskComments" />
+      <End Role="TaskCommentAttachment" EntitySet="TaskCommentAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskHistory_User" Association="Self.FK_TaskHistory_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskHistory" EntitySet="TaskHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskHistory_User1" Association="Self.FK_TaskHistory_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskHistory" EntitySet="TaskHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskPermission_UserRole" Association="Self.FK_TaskPermission_UserRole">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="TaskPermission" EntitySet="TaskPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskPrimarySubCategory_User" Association="Self.FK_TaskPrimarySubCategory_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskPrimarySubCategory" EntitySet="TaskPrimarySubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskPrimarySubCategory_User1" Association="Self.FK_TaskPrimarySubCategory_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskPrimarySubCategory" EntitySet="TaskPrimarySubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskSecondarySubCategory_TaskPrimarySubCategory" Association="Self.FK_TaskSecondarySubCategory_TaskPrimarySubCategory">
+      <End Role="TaskPrimarySubCategory" EntitySet="TaskPrimarySubCategories" />
+      <End Role="TaskSecondarySubCategory" EntitySet="TaskSecondarySubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskSecondarySubCategory_User" Association="Self.FK_TaskSecondarySubCategory_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskSecondarySubCategory" EntitySet="TaskSecondarySubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskSecondarySubCategory_User1" Association="Self.FK_TaskSecondarySubCategory_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskSecondarySubCategory" EntitySet="TaskSecondarySubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskCommentAttachment_User" Association="Self.FK_TaskCommentAttachment_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskCommentAttachment" EntitySet="TaskCommentAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskCommentAttachment_User1" Association="Self.FK_TaskCommentAttachment_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TaskCommentAttachment" EntitySet="TaskCommentAttachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="User1" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User1" Association="Self.FK_User_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="User1" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="Self.FK_UserRole_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User1" Association="Self.FK_UserRole_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="GroupDepartment" Association="Self.GroupDepartment">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectGroup" Association="Self.ProjectGroup">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
